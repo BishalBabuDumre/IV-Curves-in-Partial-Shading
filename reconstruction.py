@@ -26,8 +26,8 @@ def cleanData(input_file, index):
 
 #Function to extract forward single and (n-1) cell data
 def forwardPart(voltData,currData):
-    voltSS = [j / 96 for j in voltData]  # Getting voltage for single cell
-    voltBB = [p*95 for p in voltSS] #Calculating voltage for unshaded cells
+    voltSS = [j / 96 for j in voltData]  # Getting voltage for single cell where the module had 96 cells. You can use your own value here.
+    voltBB = [p*95 for p in voltSS] #Calculating voltage for unshaded cells where 95 comes as (96-1) for unshaded cells thinking that only 1 cell is shaded.
     return voltSS, voltBB
 
 #Extracting the unshaded part from CSV file1
